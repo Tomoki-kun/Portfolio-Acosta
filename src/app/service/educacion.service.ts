@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class EducacionService {
 
-  URL = 'http://localhost:8080/educacion/';
+  URL = 'https://portfolioback-g3cj.onrender.com/educacion/';
 
   constructor(private httpClient: HttpClient) { }
 
