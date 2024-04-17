@@ -2,13 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Educacion } from '../model/educacion';
 import { Observable } from 'rxjs';
+import { Environment } from '../environment/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EducacionService {
 
-  URL = 'https://portfolioback-g3cj.onrender.com/educacion/';
+  URL = Environment.URL + 'educacion/';
 
   constructor(private httpClient: HttpClient) { }
 

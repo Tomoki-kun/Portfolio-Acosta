@@ -4,12 +4,14 @@ import { Observable } from 'rxjs';
 import { NuevoUsuario } from '../model/nuevo-usuario';
 import { LoginUsuario } from '../model/login-usuario';
 import { JwtDto } from '../model/jwt-dto';
+import { EnvironmentProd } from '../environment/environment-prod';
+import { Environment } from '../environment/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  authURL = 'https://portfolioback-g3cj.onrender.com/auth/';
+  authURL =  Environment.URL + 'auth/';
 
 
   constructor(private httpClient: HttpClient) { }
