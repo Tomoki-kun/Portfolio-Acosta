@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Environment } from '../environment/environment';
+import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Skills } from '../model/skills';
@@ -9,7 +9,7 @@ import { Skills } from '../model/skills';
 })
 export class SkillsService {
   
-  URL = Environment.URL + 'skill/'
+  URL = environment.URL + 'skill/'
   constructor(private httpClient:HttpClient) { }
 
   public lista(): Observable<Skills[]> {

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, HammerModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 
@@ -27,6 +27,14 @@ import { NewEducacionComponent } from './components/educacion/new-educacion.comp
 import { EditEducacionComponent } from './components/educacion/edit-educacion.component';
 import { EditSkillComponent } from './components/hyss/edit-skill.component';
 import { NewSkillComponent } from './components/hyss/new-skill.component';
+import { EditAboutComponent } from './components/about/edit-about.component';
+import { EditFotoComponent } from './components/about/perfil/edit-foto/edit-foto.component';
+import { EditDatosComponent } from './components/about/perfil/edit-datos/edit-datos.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideStorage,getStorage } from '@angular/fire/storage';
+import { ImageCropperModule } from 'ngx-image-cropper';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -49,14 +57,23 @@ import { NewSkillComponent } from './components/hyss/new-skill.component';
     NewEducacionComponent,
     EditEducacionComponent,
     EditSkillComponent,
-    NewSkillComponent
+    NewSkillComponent,
+    EditAboutComponent,
+    EditFotoComponent,
+    EditDatosComponent
   ],
   imports: [
+    BrowserModule,
+    HammerModule,
+    CommonModule,
+    ImageCropperModule,
     BrowserModule,
     FormsModule,
     AppRoutingModule,
     NgCircleProgressModule.forRoot({}),
-    HttpClientModule
+    HttpClientModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideStorage(() => getStorage())
   ],
   providers: [
     interceptorProvider

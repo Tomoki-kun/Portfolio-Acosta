@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "portfolioargprog87"
+  },
+  "targets": {
+    "portfolioargprog87": {
+      "hosting": {
+        "Portfolio-ArgProg": [
+          "portfolioargprog87"
+        ]
+      }
+    }
   }
 }

@@ -1,16 +1,23 @@
 {
-  "hosting": {
-    "public": "dist/portfolio-arg-prog",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "/index.html"
-      }
-    ]
-  }
+  "hosting": [
+    {
+      "public": "dist/portfolio-arg-prog",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    },
+    {
+      "target": "Portfolio-ArgProg",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
 }

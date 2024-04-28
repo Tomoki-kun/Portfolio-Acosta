@@ -1,0 +1,25 @@
+<div class="container" *ngIf="persona">
+    <div class="row">
+        <div>
+            <form #f="ngForm" (ngSubmit)="onUpdate()" novalidate>
+                <div class="form-group">
+                    <label for="img">Nueva foto</label>
+                    <input type="file" class="form-control" id="img" name="img"
+                        [(ngModel)]="persona.img" (change)="onImageSelected($event)"
+                        accept=".jpg, jpeg, .png">
+
+                </div>
+                <div *ngIf="imageChangedEvent">
+                    <image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true"
+                        [aspectRatio]="1" [resizeToWidth]="200" [roundCropper]="true" [cropperMinWidth]="100"
+                        [cropperMinHeight]="100" [backgroundColor]="'black'" cropperDrawSettings="{strokeColor:'#000000', dragIconStrokeColor:'#000000'}" 
+                        (imageCropped)="onImageCropped($event)">
+                    </image-cropper>
+                </div>
+                <button class="btn btn-primary">
+                    Actualizar
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
